@@ -1,0 +1,386 @@
+\documentclass[a4paper, chapterprefix=true, openany]{scrbook}
+
+% Packages used
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+%\usepackage{natbib} % --> Uncomment if you are using bibtex
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{enumitem}
+\usepackage{pgfgantt}
+\usepackage{lscape}
+\usepackage[gen]{eurosym}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{cite}
+
+
+
+\usepackage{siunitx}
+\usepackage{breakurl}
+\usepackage{epstopdf}
+\usepackage{pbox}
+\usepackage{breqn}
+\usepackage{xfrac}
+\usepackage{multicol}       % multiple columns
+\usepackage{booktabs}		%For the table toprule midrule
+
+
+
+
+%\usepackage{gensymb}
+
+%\usepackage[style=ieee,
+%maxcitenames=2, 
+%	mincitenames=1,
+%	url=false,natbib=true,
+%	backend=biber]{biblatex} % comment if you are using bibtex
+
+%\addbibresource{bib/library.bib} % comment if you are using bibtex
+
+% Package for coloring --> delete it at the end
+\usepackage{xcolor}
+%\usepackage{titlepage}
+
+% Set width, height
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+% Define Chapter Format with two lines
+\newcommand\titlerule[1][1pt]{\rule{\textwidth}{#1}}
+\renewcommand\chapterlineswithprefixformat[3]{%
+	\ifstr{#2}{}{}{\titlerule[4pt]\par}%
+	#2#3\titlerule[2pt]%
+}
+
+% Change font for title, chapter, section, etc.
+\addtokomafont{disposition}{\rmfamily}
+%\setkomafont{disposition}{\normalfont} --> Not bold
+
+
+
+
+\begin{document}
+	
+	% Create Custom Titlepage
+	\begin{titlepage}
+		\centering
+		\includegraphics[scale=0.5]{images/Imredd_logo.png}\par\vspace{1cm}
+		{
+ \normalsize Gamification Workshop
+				\par}
+		\vspace{1cm}
+		\vfill
+		{\scshape\Large MSc Smart Cities \par}
+		\vspace{1.5cm}
+		\vfill
+		\rule{\textwidth}{1pt}\par
+		\vspace{0.5\baselineskip}
+		% Title
+
+		{\huge\bfseries Energy Communities workshop}\\[0.5\baselineskip]
+		\rule{\textwidth}{1pt}\par
+		\vspace{2cm}
+		% Author
+		%		{\Large\itshape \textbf{Submitted by:} \\Sonam Norbu\par}
+		\vfill
+		% Supervisors
+		%		\textbf{Supervised by:}\par
+		%		Dr.~Valentin \textsc{Robu}\\
+		%		Professor.~David \textsc{Flynn}
+		
+		\vfill
+		
+		% Bottom of the page
+		% Date 
+		{\large 2024\par}
+				\vfill
+%		{\large \textbf{Deadline} $17^{th}$ October 2019, 11:59AM\par}			
+		
+	\end{titlepage}
+	
+	%----------------------------------------Abstract---------------------------------------%
+	\chapter*{\centerline{Abstract}}
+	The aim of this Workshop is for you to have a batter understanding of electricity load profiles, electricity environmental impact, but also to understand the basics  of electricity markets. In this workshop, you will first generate a load curve that meets the consumer's expectations relative to energy and comfort.Then, you will take part in  a local energy market and will try to bid in the market to ensure electricity supply at a low cost. Throughout this workshop, you might have to investigate how flexibility can help to reduce the financial and environmental cost of electricity.
+	 	
+	\vfill
+	
+
+	
+	
+	%------------------------------------Table of contents----------------------------------%
+	
+	\tableofcontents
+	
+	% Main body
+	
+	%=======================================================================================%
+	%						               Introduction  				                    %
+	%=======================================================================================
+	\chapter{Getting started.} 
+
+	\section{Settings}
+	To start the workshop, you should connect your computer to the network proposed by the lecturer (WIFI: ImreddWorkshop  password: imredd06) %Note that some service providers (such as the university's wifi), might not allow you to connect, in which case you could use your phone to share connection.
+	Once connected, open a \textit{chrome} or \textit{Brave} browser, and type in the following address: \textit{http://IP ADDRESS:19000} where \textit{IP ADDRESS} will be given by your lecturer.
+	If you are not able to access the content of this website, please ask the lecturer.
+	
+	\chapter{Electricity Consumption}
+
+From page \textit{http://IP ADDRESS:19000}, select \textit{step1: Electric Consumption}.
+In this step, you are asked to determine an optimal consumption profile that will:
+\begin{itemize}
+	\item Meet an end-user's needs
+	\item Minimise electricity cost
+	\item Minimise consumption's environmental impact
+	\item understand the impact on the community consumption profile
+\end{itemize}
+
+\section{Registration}
+Every time you refresh the page, you will have to register, otherwise, you will not be able to contribute to the community.
+Registration is easy: fill in your name, \textbf{without any space}, then press "\textit{Register}".
+
+\section{Selection of your persona}
+For this workshop, you can either represent:
+\begin{itemize}
+	\item a student
+	\item an elderly people
+	\item a whole family
+\end{itemize}
+		
+	To help in your decision, personas have different requirements that you will have to fulfill:
+	\subsection{Student}
+	The student has the following requirements:
+	\begin{itemize}
+		\item Heating:
+		
+		Inside temperature of the student should be at least 20 degrees between 6AM and 8AM,and between 17:30 and 23:00. 
+		
+		\item Cooking:
+		The student has to use the cooking plates for 20 minutes between 7AM and 8AM, and for 45 minutes between 19:00 and 22:00.
+		
+		\item Electric vehicle recharge: the student will not be at home between 8AM and 17:00. Furthermore, his/her electric car should be charged at 15 kWh at least for 8AM. Note that you can charge it in the evening, this will be considered as if it was the evening of the previous day.
+	\end{itemize}
+	
+	
+	\subsection{Elderly People}
+	The elderly people has the following requirements:
+	\begin{itemize}
+		\item Heating:
+		
+		Inside temperature of the elderly should be at least 19.5 degrees between 6AM and 10PM. 
+		
+		\item Cooking:
+		The elderly has to use the cooking plates for 45 minutes between 11AM and 12:30, and for 45 minutes between 18:00 and 19:00.
+		
+		\item Electric vehicle recharge: the elderly just need to charge his/her electric car with 5 kWh throughout the day.
+	\end{itemize}
+	
+	\subsection{Family}
+	The family has the following requirements:
+	\begin{itemize}
+		\item Heating:
+		
+		Inside temperature of the student should be at least 19.5 degrees between 6AM and 8AM,and 20 degrees between 17:00 and 22:30. 
+		
+		\item Cooking:
+		The family has to use the cooking plates for 30 minutes between 6:30AM and 8AM, and for 70 minutes between 17:30 and 20:30.
+		
+		\item Electric vehicle recharge: the family will not be at home between 8AM and 17:00. Furthermore, the family's electric car should be charged with 15 kWh at least for 8AM. Note that you can charge it in the evening, this will be considered as if it was the evening of the previous day.
+	\end{itemize}
+	
+	\section{Meet your persona needs}
+	
+Now, you can start to simulate the electric consumption of your persona by scrolling down the section "Cooking Plates".
+You can move the sliders to start a specific consumption at the desired time. For Cooking and Heating, you can use 2 different timings to fulfill the needs.
+For heating, you have 3 possible time slot to turn the heaters on, and you can also adjust the heaters' power. For heating, the requirement is in term of temperature. Therefore, you might want to look at the graph "Inside Temperature" to ensure that your heating power profile achieves the desired temperature.
+
+You are requested to fulfill your persona's needs. When the needs are fulfilled, the section "Needs fulfilled ?" will turn green.
+
+
+Note that 2 graphs will be directly updated when you change your profiles: the first one displays the power curve with minutely intervals, whereas the second one displays the same curve, but at a 30 minutes interval, which is the usual time considered for markets.
+
+	\section{Optimise your consumption at the household level}
+
+In this task,\textbf{ you are first asked to not use any Distributed Energy Resources} (DER). So please click the box "\textit{no DER}" at the top of the page.
+Then, your aim is to optimise your own consumption from a cost and CO2 point of view. 
+Once you have found the optimal load profiles, you can click on the button "submit data". This will display the consumption of the whole community.
+
+Note that the graph \textit{Household load profile (30 minutes time intervals)} displays the electricity cost evolution, and the CO2 emissions associated the electricity consumption. This should help you in minimising the cost and carbon footprint.
+
+
+
+	\section{Optimise your consumption at a community level}
+
+This task will take 30 minutes. 
+
+In this task, \textbf{ you are now asked to use any Distributed Energy Resources} (DER). So please click the box \textit{PV} or \textit{Wind}   at the top of the page, and submit the data again.
+
+
+Now, as a member of the community, you are requested to change your consumption pattern in order to ensure the community is fully self-sufficient. This means that the blue curve of the "\textit{Community 30 min Profile (consumption and production)}" graph should be below the orange curve at any time. Needs should still be fulfilled, but the cost and associated CO2 emissions are not a target anymore.
+
+After every relevant change you make in your consumption, feel free to submit your data (by clicking on the \textit{submit data} button) to see how the community curve is updated.
+
+After 30 minutes, you will be requested to choose your final load profile for the day.
+
+Conclude on the feasibility of community self-sufficiency when no external storage (batteries, ...) are used. 
+
+
+
+\chapter{Battery Sizing}
+
+In this chapter, you are asked to size 2 batteries: 
+\begin{itemize}
+	\item A residential battery located at your house premises to fulfill the load consumption you achieved
+	\item A collective battery that would be located at the community level.
+\end{itemize}
+
+\section{Individual Battery}
+In this section, you will size a battery for a single household.
+First, you should have a consumption and production (either wind or PV) loaded in your browser.
+Then, below the graph "Inside Temperature", you can download your raw data.
+Open this data with an appropriate software (excel, Matlab, Scilab, ...) in order to size your battery. 
+
+\begin{itemize}
+	\item By studying the difference between the consumed and produced powers, determine what would be the maximum power needed for a battery in the discharge mode. What is the unit?
+	\item Using your own designed algorithm (that needs to be explained), determine the minimum size of battery (in kWh) that would make the house completely self-sufficient in terms of electricity.
+	\item Taking a price of 300€ per kWh, what would be the price to be 100\% self-sufficient?
+	\item Discuss the feasibility of such a scenario.
+	\item \textit{Bonus}: What would be the battery capacity to have your consumption self produced 80\% of the time?
+	\end{itemize}
+
+\section{Community Battery}
+In this section, you will size a battery for the community.
+First, you should have a consumption and production (either wind or PV) loaded in your browser.
+Then, below the graph "Inside Temperature", you can submit your data.
+This will load the community data. You can now download this community data using the button above the last graph of the page. 
+
+\begin{itemize}
+	\item By studying the difference between the consumed and produced powers, determine what would be the maximum power needed for a community battery in the discharge mode. What is the unit?
+	\item Using your own designed algorithm (that needs to be explained), determine the minimum size of battery (in kWh) that would make the community completely self-sufficient in terms of electricity.
+	\item Taking a price of 300€ per kWh, what would be the price to be 100\% self-sufficient?
+	\item Discuss the differences between this scenario and the previous one with an individual household.
+
+\end{itemize}
+
+
+
+
+\chapter{Electricity trading}
+
+In this chapter you will trade electricity within the community. Connect to the page \textit{http://IP ADDRESS:19000} and click on \textit{Phase 2: Market bidding}. 
+
+\section{Replicate the consumption / production from previous chapter}
+Follow the same instructions as in the previous section by:
+\begin{itemize}
+	\item Filling your name (this must be the exact same name as the one you used in the previous chapter)
+	\item Selecting the person you chose
+	\item Replicating the load profile you determined (with PV or Wind, and filling the needs of your persona)
+\end{itemize}
+
+You can submit your data to check the community consumption and production.
+As you might notice, the time intervals for the load curves are now much bigger, so the number of market slot is tractable.
+
+\section{Bid in the market}
+For this section you will be allowed 1 hour only.
+The end of the webpage displays an \textit{Electricity Trading} section. Once your load profile is done, you are required to trade on a local market to buy or sell you consumption / production. 
+You can now start adjusting your bid prices that you want to submit to the market. Note that bids are blue when you are consuming electricity (i.e buying electricity), and orange when you are exporting electricity (i.e selling electricity).
+\begin{figure}[h]
+	\centerline{\includegraphics[width=0.9\columnwidth]{images/screenshot2.JPG}}
+	\caption{Screenshot example for the Annual Cost of Energy consumption with local market.}
+	\label{screenshot2}
+\end{figure}
+Note that setting a blue bid price at 16 corresponds to the willingness to buy electricity from the grid.
+Once you have determined your bids prices, you can send them to the market operator by clicking on the "\textit{submit your bids}" button.
+
+Scrolling down the webpage, you can now see how the market was cleared. You can identify:
+\begin{itemize}
+	\item The amount of energy you were allowed to buy
+	\item The amount of energy you were allowed to sell
+	\item The electricity quantities that you could not buy or sell
+	\item The clearing price at each time slot of the market
+\end{itemize}
+
+The clearing mechanism that is used by the market operator is a continuous double auction as it was presented during your Smart Grid lecture.  
+Therefore, you are allowed to change your bid prices, but also the energy quantities (while still fulfilling your needs) in order to achieve better results. You can submit your bids anytime you want, but you will only be allowed 10 submissions in total. 
+
+Note that the market will evolve anytime someone sends a new bid.
+
+The aim is for you to minimize the bill as it is shown in the "\textit{Annual Cost of Energy consumption with local market}" section, at the bottom of the webpage. You will then be compared with other groups' persona. 
+
+If the market is too constrained, how many renewable energy sources (PV or Wind) would be needed from the community to add liquidity to this local market. You can test this by opening a new webpage (browser tab/window), connecting to \textit{http://IP ADDRESS:19000/Part2}, and create a new profile that would consist in DER only (PV or Wind). Name it as follows: \textit{'your-name' + 'PV' or 'Wind' + the number of the asset}. You should then submit associated bids with this asset. Do not close the corresponding tab until the end of your workshop, in case you need to change these new assets' bids. 
+Once you have created generating assets, if the market has too much production, you can remove some by clicking on the "\textit{no DER}" button and submitting again this new production for the associated assets.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	\section{Discussion} 
+	Considering the two previous chapters, you are asked to discuss the difficulties to incentivise self-consumption in a local community. You are also asked to discuss the readiness of people to be flexible, and how you could motivate and concretely activate this flexibility.
+	
+	Your main deliverable for this section will be as follows:
+	\begin{itemize}
+		\item Explain the pros and cons of the double auction based market clearing algorithm
+		\item Based on the examples given by your lecturer (full P2P with Automated negotiations, Peer to community with double auction, no bid but only a flexibility potential given to an aggregator, ...) , explain what you believe would be  a fair or acceptable market clearing mechanism in your own community.
+	\end{itemize}
+
+
+\chapter{Household Home Energy Management System}
+In this chapter, you will see how computer based optimisation can help improving our consumption.
+Connecting to \textit{http://IP ADDRESS:19000/Part3}, you will reach an interface that allows you to optimize the heating part of your consumption.
+
+\begin{itemize}
+	\item First, choose relevant temperature requirements for your household.
+	\item Then, determine what would be you preference between a low cost consumption and a decarbonised consumption.
+	\item Then, clicking on the "Optimize Heating" button, you will obtain an optimal temperature profile that will meet your constraint and goals.
+	\item Discuss how an optimization algorithm can add flexibility to your consumption by highlighting if such algorithm can pre-heat an household when the electricity environmental and financial costs are low.
+	\item Discuss the acceptability of these algorithms
+	\item Explain if some specific criteria are not included in the optimisation
+	\item What do you think the impact of the building's thermal inertia is.
+\end{itemize}
+
+
+
+\chapter{Deliverable}
+The deliverable will be as follows:
+
+You are asked to present a powerpoint for your community (one powerpoint for the group of 3 people), that will include the following:
+\begin{itemize}
+	\item A table with the electricity cost and environmental impact for 3 key members of your community (student, family, elderly) with and without DER, but always meeting their needs.
+	\item A table with the size of a residential battery for each of the personas, and the size of the community battery. Using the number of members in the community, compare both, and explain the pros and cons of batteries.
+	\item Community Market: Propose your own market mechanism in which you will explain if individuals can sell electricity to a specific neighbour, or if they sell electricity to the community. Explain how the price will be determined (negotiations, automated negotiations, double auctions, ...). Discuss the feasibility, the fairness and acceptability of such scheme. Discuss the experience from a user point of view.
+	\item Finally, showcase the benefits from Optimisation algorithms at a household level, and explain the limits but also how it could be implemented worldwide, what would be the acceptability of such algorithms, and what should be the criteria for the optimisation.
+\end{itemize}
+	
+	
+	%=======================================================================================%
+	%						               Bibliography			    	                    %
+	%=======================================================================================%
+	\clearpage
+	\phantomsection
+%	\addcontentsline{toc}{chapter}{Bibliography}
+%	\bibliographystyle{IEEEtran}
+%	\bibliography{library}
+	
+	
+\end{document}
