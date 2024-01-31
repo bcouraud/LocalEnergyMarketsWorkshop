@@ -1,0 +1,39 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container{
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.containerchart{
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.style1bold
+{
+    font-size:      150%;
+    font-weight:    bold;
+}
+
+.fitcontent {
+  display: inline-block;
+  left: 1%;
+  right: 1%;
+  top: 50%;
+
+}

@@ -1,0 +1,26 @@
+{
+  "name": "localenergymarkets",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 19000",
+    "build": "next build",
+    "start": "next start -p 19000",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "chart.js": "^3.5.1",
+    "child_process": "^1.0.2",
+    "next": "^14.1.0",
+    "numeric": "^1.2.6",
+    "rc-slider": "^9.7.4",
+    "react": "18.2.0",
+    "react-chartjs-2": "^3.1.1",
+    "react-dom": "18.2.0",
+    "save": "^2.9.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4"
+  }
+}
